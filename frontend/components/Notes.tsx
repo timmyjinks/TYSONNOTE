@@ -32,7 +32,7 @@ export function Notes({ user_name }: { user_name: string }) {
   function handleState(_id: string, edit: string) {
     const state = data.map((item) => {
       if (item._id === _id) {
-        return { ...data, note: edit };
+        return { ...data, _id: _id, note: edit };
       }
       return item;
     });
