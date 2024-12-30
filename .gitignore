@@ -10,3 +10,7 @@ __pycache__/
 venv/
 env/
 pyvenv.cfg
+
+bun.lockb
+
+mongo-data/
