@@ -43,7 +43,7 @@ export function Notes({ user_name }: { user_name: string }) {
     async function fetchData() {
       try {
         const response = await fetch(
-          `http://localhost:8000/notes/${user_name}`,
+          `https://api2.tysonjenkins.codes/notes/${user_name}`,
         );
         const json = await response.json();
         setData(json);
