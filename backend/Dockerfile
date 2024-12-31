@@ -1,4 +1,6 @@
-FROM python:3-alpine
+FROM python:3-slim
+
+RUN apt update && apt install tesseract-ocr -y
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
