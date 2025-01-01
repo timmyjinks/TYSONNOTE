@@ -1,15 +1,14 @@
-# mongo driver
 import pymongo
 from bson import ObjectId
 
-client = pymongo.MongoClient("mongodb://root:password@mongo:27017/")
+client = pymongo.MongoClient("mongodb://root:password@localhost:27017/")
 db = client["user_notes"]
 notes_col = db["notes"]
 
 
 def insert_one(user_name: str, notes: str):
-    notes_data = {"user_name": user_name, "note": notes}
-    result = notes_col.insert_one(notes_data)
+    note_data = {"user_name": user_name, "note": notes}
+    result = notes_col.insert_one(note_data)
     return result.inserted_id
 
 
