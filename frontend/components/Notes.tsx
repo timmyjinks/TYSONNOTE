@@ -23,7 +23,7 @@ interface StateData {
 }
 
 export function Notes({ user_name }: { user_name: string }) {
-  const pathname = usePathname().split("/")[1];
+  const pathname = usePathname().split("/")[2];
   const [data, setData] = useState<StateData[]>([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -43,7 +43,7 @@ export function Notes({ user_name }: { user_name: string }) {
     async function fetchData() {
       try {
         const response = await fetch(
-          `https://api2.tysonjenkins.codes/notes/${user_name}`,
+          `https://api2.tysonjenkins.codes/notes/${pathname}`,
         );
         const json = await response.json();
         setData(json);
@@ -60,15 +60,25 @@ export function Notes({ user_name }: { user_name: string }) {
   if (user_name != pathname) {
     return (
       <>
-        <div>
+        <div className="grid grid-cols-5 gap-5">
           {error ? (
             <p>{error}</p>
           ) : loading ? (
             <p>Loading...</p>
           ) : (
             data.map((item) => (
-              <div key={item._id}>
-                <p>{item.note}</p>
+              <div className="flex dark" key={item._id}>
+                <Card className="flex w-full flex-col">
+                  <div>
+                    <CardHeader className="flex-row justify-between items-center">
+                      <CardTitle>{pathname}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p>{item.note}</p>
+                    </CardContent>
+                    <CardFooter></CardFooter>
+                  </div>
+                </Card>
               </div>
             ))
           )}
