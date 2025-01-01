@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   async function handle(formData: FormData) {
-    const response = await fetch("http://localhost:8000/get_note", {
+    const response = await fetch("https://api2.tysonjenkins.codes/get_note", {
       method: "POST",
       body: formData,
     });
