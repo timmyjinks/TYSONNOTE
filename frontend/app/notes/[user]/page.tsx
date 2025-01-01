@@ -5,10 +5,9 @@ import { redirect } from "next/navigation";
 
 export default async function UserPage() {
   const cookie = await cookies();
-  const auth = cookie.get("authenticated")?.value;
   const user_name = cookie.get("user_name")?.value;
 
-  if (auth != "true" || user_name == undefined) {
+  if (user_name == undefined) {
     redirect("/");
   }
 
