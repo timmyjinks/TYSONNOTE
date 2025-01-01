@@ -1,7 +1,7 @@
 import pymongo
 from bson import ObjectId
 
-client = pymongo.MongoClient("mongodb://root:password@localhost:27017/")
+client = pymongo.MongoClient("mongodb://root:password@mongo:27017/")
 
 db = client["users"]
 notes_col = db["user_info"]
