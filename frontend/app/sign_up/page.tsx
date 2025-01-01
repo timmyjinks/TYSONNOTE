@@ -45,7 +45,7 @@ export default function SignUp() {
                 type="password"
                 placeholder="Confirm Password"
               />
-              <Button type="submit">Login</Button>
+              <Button type="submit">Sign Up</Button>
             </CardContent>
             <CardFooter className="flex justify-end items-center">
               <Link href="/login">Already have an account?</Link>

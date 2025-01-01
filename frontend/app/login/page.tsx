@@ -44,7 +44,7 @@ export default function Login() {
               <Button type="submit">Login</Button>
             </CardContent>
             <CardFooter className="flex justify-end items-center">
-              <Link href="/sign_up">Don$apost have an account?</Link>
+              <Link href="/sign_up">Don't have an account?</Link>
             </CardFooter>
           </form>
         </Card>
