@@ -8,8 +8,11 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Login() {
+  const [userError, setUserError] = useState(true);
+
   return (
     <div>
       <header className="p-5">
@@ -20,31 +23,39 @@ export default function Login() {
       <div className="flex justify-center items-center h-screen">
         <Card className="flex flex-col p-10">
           <form
-            action={login}
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
               const formData = new FormData(e.currentTarget);
-              login(formData);
+              setUserError(await login(formData));
+              console.log(userError);
             }}
           >
             <CardHeader>Login</CardHeader>
             <CardContent className="flex flex-col m-5">
               <input
-                className="text-black mb-5 py-3 pr-[10px] outline outline-1 outline-black"
+                className="text-black py-3 pr-[10px] outline outline-1 outline-black"
                 type="text"
                 placeholder="Username"
                 name="user_name"
               />
+
               <input
-                className="text-black mb-5 py-3 pr-[500px] outline outline-1 outline-black"
+                className="text-black mt-5 py-3 pr-[500px] outline outline-1 outline-black"
                 type="password"
                 placeholder="Password"
                 name="password"
               />
-              <Button type="submit">Login</Button>
+              {!userError && (
+                <p className="text-red-500 mt-5">
+                  Username or Password is Incorrect
+                </p>
+              )}
+              <Button className="mt-5" type="submit">
+                Login
+              </Button>
             </CardContent>
             <CardFooter className="flex justify-end items-center">
-              <Link href="/sign_up">Don't have an account?</Link>
+              <Link href="/sign_up">Dont have an account?</Link>
             </CardFooter>
           </form>
         </Card>

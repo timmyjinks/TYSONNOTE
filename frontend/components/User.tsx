@@ -98,6 +98,7 @@ export function User({ user_name }: { user_name: string }) {
                       type="file"
                       name="image"
                       accept=".jpg, .png, .jpeg"
+                      required
                     />
                     <Button type="submit">Send</Button>
                   </div>

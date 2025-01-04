@@ -39,8 +39,21 @@ export default function Home() {
       <div className="h-screen flex justify-center items-center">
         <div className="m-5 w-[80%]">
           <form className="flex flex-col" action={handle} method="POST">
-            <div className="flex w-1/2 m-auto">
-              <Input type="file" name="image" accept=".jpg, .png, .jpeg" />
+            <h1 className="text-center m-[15px] p-[15px] text-[32px]">
+              Bitmap Interpreter To Convert Handwriting / BITCH (same thing)
+            </h1>
+
+            <h1 className="text-center">
+              Take a picture of your notes and let computer magic turn it into a
+              turn it into a text file
+            </h1>
+            <div className="flex w-1/2 mx-auto m-5">
+              <Input
+                type="file"
+                name="image"
+                accept=".jpg, .png, .jpeg"
+                required
+              />
               <Button type="submit">Send</Button>
             </div>
           </form>
