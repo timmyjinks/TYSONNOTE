@@ -23,7 +23,7 @@ export default function SignUp() {
     <div>
       <header className="p-5">
         <Link className="text-xl m-5" href="/">
-          BITCH
+          TYSONNOTE
         </Link>
       </header>
       <div className="flex justify-center items-center h-screen">
@@ -59,11 +59,6 @@ export default function SignUp() {
                 setConfirmPasswordError(" ");
               }
 
-              console.log(validUserName);
-              console.log("password: " + password);
-              console.log(validPassword);
-              console.log("confirm password: " + confirmPassword);
-              console.log(validConfirmPassword);
               if (!validUserName || !validPassword || !validConfirmPassword) {
                 return;
               }
