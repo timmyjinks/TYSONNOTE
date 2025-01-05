@@ -17,7 +17,7 @@ export default function Login() {
     <div>
       <header className="p-5">
         <Link className="text-xl m-5" href="/">
-          BITCH
+          TYSONNOTE
         </Link>
       </header>
       <div className="flex justify-center items-center h-screen">

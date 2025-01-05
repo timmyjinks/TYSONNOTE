@@ -25,7 +25,7 @@ export default function Home() {
     <div>
       <header className="flex justify-between border-b ecoration-white">
         <div className="text-xl m-5">
-          <Link href="/">BITCH</Link>
+          <Link href="/">TYSONNOTE</Link>
         </div>
         <div>
           <Link href="/login">
@@ -40,7 +40,7 @@ export default function Home() {
         <div className="m-5 w-[80%]">
           <form className="flex flex-col" action={handle} method="POST">
             <h1 className="text-center m-[15px] p-[15px] text-[32px]">
-              Bitmap Interpreter To Convert Handwriting / BITCH (same thing)
+              Bitmap Interpreter To Convert Handwriting / TYSONNOTE (same thing)
             </h1>
 
             <h1 className="text-center">
