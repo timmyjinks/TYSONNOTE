@@ -59,11 +59,6 @@ export default function SignUp() {
                 setConfirmPasswordError(" ");
               }
 
-              console.log(validUserName);
-              console.log("password: " + password);
-              console.log(validPassword);
-              console.log("confirm password: " + confirmPassword);
-              console.log(validConfirmPassword);
               if (!validUserName || !validPassword || !validConfirmPassword) {
                 return;
               }
