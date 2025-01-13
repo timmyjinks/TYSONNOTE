@@ -1,10 +1,15 @@
-from io import BytesIO
+import re
 
-import pytesseract
-from PIL import Image
+import torch
+from doctr.io import DocumentFile
+from doctr.models import ocr_predictor
+
+import aiinator
+
+model = ocr_predictor(pretrained=True)
 
 
 def image_to_string(image_bytes: bytes) -> str:
-    image = Image.open(BytesIO(image_bytes))
-    text = pytesseract.image_to_string(image)
+    doc = DocumentFile.from_images(image_bytes)
+    text = model(doc).render()
     return text
