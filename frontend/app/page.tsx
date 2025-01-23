@@ -45,7 +45,7 @@ export default function Home() {
 
             <h1 className="text-center">
               Take a picture of your notes and let computer magic turn it into a
-              turn it into a text file
+              text file
             </h1>
             <div className="flex w-1/2 mx-auto m-5">
               <Input
