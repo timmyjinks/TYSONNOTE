@@ -1,10 +1,5 @@
-import re
-
-import torch
 from doctr.io import DocumentFile
 from doctr.models import ocr_predictor
-
-import aiinator
 
 model = ocr_predictor(pretrained=True)
 
